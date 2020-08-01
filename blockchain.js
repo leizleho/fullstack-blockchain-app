@@ -31,12 +31,11 @@ class Blockchain {
   static isValidChain(chain) {
     if (JSON.stringify(chain[0]) !== JSON.stringify(Block.genesis())) return false;
     for (let i = 1; i < chain.length; i++) {
-      const block = chain[i];
       const actualLastHash = chain[i - 1].hash;
-      const { data, hash, lastHash, timestamp } = block;
+      const { data, hash, lastHash, timestamp, nonce, difficulty } = chain[i];
       if (lastHash !== actualLastHash) return false;
 
-      const validateHash = cryptoHash(data, lastHash, timestamp);
+      const validateHash = cryptoHash(data, lastHash, timestamp, nonce, difficulty);
       if (hash !== validateHash) return false;
     }
     return true;
