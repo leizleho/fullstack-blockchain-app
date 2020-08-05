@@ -4,9 +4,9 @@
 ## Todo
 
 - [x] Block class
-- [ ] Chain class
-- [ ] Proof of Work
-- [ ] Blockchain API
+- [x] Chain class
+- [x] Proof of Work
+- [x] Blockchain API
 - [ ] Wallets
 - [ ] Keys
 - [ ] Transactions
