@@ -47,15 +47,15 @@ describe('Transaction', () => {
       expect(transaction.input.address).toEqual(senderWallet.publicKey);
     });
 
-    it('signs the input'. () => {
+    it('signs the input', () => {
       expect(
         verifySignature({
           publicKey: senderWallet.publicKey,
           data: transaction.outputMap,
           signature: transaction.input.signature
         })
-    ).toBe(true);
+      ).toBe(true);
 
+    });
   });
-});
 });
